@@ -10,7 +10,6 @@ use Illuminate\Notifications\Notifiable;
 
 class User extends Authenticatable
 {
-    /** @use HasFactory<UserFactory> */
     use HasFactory, Notifiable;
 
     /**
@@ -20,6 +19,8 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'name',
+        'username',
+        'avatar_url',
         'email',
         'password',
     ];
@@ -45,5 +46,47 @@ class User extends Authenticatable
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
         ];
+    }
+
+    public function comments()
+    {
+        return $this->hasMany(Comment::class);
+    }
+
+    public function followedStories()
+    {
+        return $this->belongsToMany(Story::class, 'follows')->withTimestamps();
+    }
+
+    public function bookmarkedChapters()
+    {
+        return $this->belongsToMany(Chapter::class, 'bookmarks', 'user_id', 'chapter_id')
+            ->withPivot('story_id')
+            ->withTimestamps();
+    }
+
+    public function readingHistories()
+    {
+        return $this->hasMany(ReadingHistory::class);
+    }
+
+    public function storyRatings()
+    {
+        return $this->hasMany(StoryRating::class);
+    }
+
+    public function readingProgresses()
+    {
+        return $this->hasMany(ReadingProgress::class);
+    }
+
+    public function getAvatarUrlAttribute($value)
+    {
+        return $value ?? 'default-avatar.png';
+    }
+
+    public function getRouteKeyName()
+    {
+        return 'username';
     }
 }
