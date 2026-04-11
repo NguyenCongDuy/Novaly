@@ -3,13 +3,14 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\GenreController;
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\AuthorController;
 
-Route::get('/', function () {
-    return view('home')->name('home');
-});
+// Route::get('/', function () {
+//     return view('home')->name('home');
+// });
 
 // Admin Routes
-// Admin Routes (chưa có auth nên để mở)
+// Admin Routes 
 Route::prefix('admin')
     ->as('admin.')
     ->group(function () {
@@ -18,4 +19,7 @@ Route::prefix('admin')
 
         // Genres CRUD
         Route::resource('genres', GenreController::class);
+        
+        // Authors CRUD
+        Route::resource('authors', AuthorController::class);
     });
