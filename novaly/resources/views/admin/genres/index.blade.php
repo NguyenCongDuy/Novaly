@@ -24,7 +24,7 @@
                             <tr>
                                 <th>#</th>
                                 <th>Tên thể loại</th>
-                                <th>Slug</th>
+                                <th>Thẻ</th>
                                 <th>Ngày tạo</th>
                                 <th>Hành động</th>
                             </tr>

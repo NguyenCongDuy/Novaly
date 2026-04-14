@@ -6,12 +6,10 @@
 
     <title>NOVALY</title>
 
-
     <meta name="description" content="Start your development with a Dashboard for Bootstrap 5" />
     <meta name="keywords" content="dashboard, bootstrap 5 dashboard, bootstrap 5 design, bootstrap 5">
     <!-- Canonical SEO -->
     <link rel="canonical" href="#">
-
 
     <script>
         (function(w, d, s, l, i) {
@@ -32,9 +30,7 @@
     <!-- End Google Tag Manager -->
 
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon"
-        href="https://demos.pixinvent.com/frest-html-admin-template/assets/img/favicon/favicon.ico" />
-
+    <link rel="icon" type="image/png" href="{{ asset('images/novaly_final.png') }}">
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com/">
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
