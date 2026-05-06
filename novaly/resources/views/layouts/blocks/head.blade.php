@@ -22,8 +22,7 @@
                 j = d.createElement(s),
                 dl = l != 'dataLayer' ? '&l=' + l : '';
             j.async = true;
-            j.src =
-                '../../../../www.googletagmanager.com/gtm5445.html?id=' + i + dl;
+            j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
             f.parentNode.insertBefore(j, f);
         })(window, document, 'script', 'dataLayer', 'GTM-5J3LMKC');
     </script>
@@ -55,6 +54,6 @@
 
     <!-- JS -->
     <script src="{{ asset('vendor/js/helpers.js') }}"></script>
-    <script src="{{ asset('vendor/js/template-customizer.js') }}"></script>
-    <script src="{{ asset('vendor/js/config.js') }}"></script>
+    {{-- <script src="{{ asset('vendor/js/template-customizer.js') }}"></script> --}}
+    {{-- <script src="{{ asset('vendor/js/config.js') }}"></script> --}}
 </head>
